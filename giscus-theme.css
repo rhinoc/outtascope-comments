@@ -534,7 +534,7 @@ markdown-toolbar,
 /* ── Typography pass ───────────────────────────────────────────
    The earlier mono-only pass made everything ui-monospace, which
    left buttons/inputs feeling out of place. Bring back the site
-   fonts: Funnel Sans for body, Bytesized for headers, mono for
+   fonts: Funnel Sans for body, all Funnel Sans for consistency
    code. */
 #__next main {
   font-family:
@@ -564,7 +564,7 @@ markdown-toolbar,
   font-size: 0.9375rem !important;
 }
 
-/* Buttons + actions — Bytesized pixel font. */
+/* Buttons + actions — same face as body for a flat look. */
 #__next main .btn,
 #__next main button,
 #__next main .gsc-reactions-button,
@@ -573,15 +573,16 @@ markdown-toolbar,
 #__next main .gsc-header,
 #__next main .gsc-reactions-count {
   font-family: "Funnel Sans Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-  letter-spacing: 0.04em;
-  font-weight: 400 !important;
+  letter-spacing: 0;
+  font-weight: 500 !important;
 }
 
 /* Inputs and textareas stay Funnel Sans (mono for code only). */
 #__next main textarea::placeholder,
 #__next main input::placeholder {
-  font-family: "Funnel Sans Variable", sans-serif !important;
-  color: var(--color-fg-muted) !important;
+  font-family: "Funnel Sans Variable", "PingFang SC", "Hiragino Sans GB", sans-serif !important;
+  color: var(--color-fg-subtle) !important;
+  font-style: italic;
 }
 
 /* Markdown toolbar stays mono — it's about inserting syntax. */
