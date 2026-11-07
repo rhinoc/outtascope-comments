@@ -9,6 +9,10 @@
    `[data-color-mode=light|dark]` on <html> so we don't rely on
    prefers-color-scheme alone. */
 
+:root {
+  color-scheme: light;
+}
+
 html[data-color-mode="light"] {
   color-scheme: light;
   --color-prettylights-syntax-comment: #676c75;
