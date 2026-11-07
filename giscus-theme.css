@@ -663,7 +663,6 @@ markdown-toolbar,
   color: var(--color-fg-default) !important;
   font-weight: 600 !important;
   border-bottom: 2px solid var(--color-fg-default) !important;
-  margin-bottom: -1px;
 }
 
 /* The dashed markdown-hint footer blends into the same panel. */
