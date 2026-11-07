@@ -435,15 +435,11 @@ markdown-toolbar,
    Lean into the terminal/ascii look: monospace UI text, box
    borders on the panels, ASCII sigils on labels and buttons. */
 
-#__next main .gsc-comments,
-#__next main .gsc-comment,
-#__next main .gsc-reply,
+/* No chrome borders — match the site's flat, typographic feel.
+   The only lines left are dividers and the comment box outline. */
 #__next main .gsc-comment-box,
 #__next main .gsc-reply-box,
-#__next main .timeline-comment,
-#__next main .Box,
 #__next main .form-control,
-#__next main input[type="text"],
 #__next main textarea {
   border: 1px solid var(--color-border-default) !important;
   background: var(--color-canvas-default) !important;
@@ -483,32 +479,49 @@ markdown-toolbar,
   color: var(--color-fg-muted);
   font-family: ui-monospace, monospace;
 }
-#__next main .gsc-reactions-count::before {
-  content: "· ";
-  color: var(--color-fg-muted);
-}
-#__next main .gsc-reactions-count::after {
-  content: " ·";
-  color: var(--color-fg-muted);
-}
+
 
 /* Bracket the tabs. */
-#__next main .tabnav-tab::before { content: "[ "; color: var(--color-fg-muted); }
-#__next main .tabnav-tab::after { content: " ]"; color: var(--color-fg-muted); }
-#__next main .tabnav-tab[aria-selected="true"]::before,
-#__next main .tabnav-tab.selected::before { content: "[*"; color: var(--color-accent-fg); }
-#__next main .tabnav-tab[aria-selected="true"]::after,
-#__next main .tabnav-tab.selected::after { content: "*]"; color: var(--color-accent-fg); }
+/* Selected tab = ink block, like .toc a.on. */
+#__next main .tabnav-tab {
+  border: 0 !important;
+  color: var(--color-fg-muted) !important;
+  padding: 0.25em 0.5em !important;
+}
+#__next main .tabnav-tab[aria-selected="true"],
+#__next main .tabnav-tab.selected {
+  background: var(--color-fg-default) !important;
+  color: var(--color-canvas-default) !important;
+  border: 0 !important;
+}
 
 /* Buttons: drop the GitHub pill, get a mono bracketed look. */
 #__next main .btn-primary {
   text-transform: none;
 }
-#__next main .btn-primary::before { content: "> "; margin-right: 0.25em; }
+#__next main .btn-primary {
+  background: var(--color-fg-default) !important;
+  color: var(--color-canvas-default) !important;
+  border-color: var(--color-fg-default) !important;
+}
+#__next main .btn-primary:hover {
+  background: var(--color-fg-muted) !important;
+  border-color: var(--color-fg-muted) !important;
+}
+#__next main .btn-primary::before {
+  content: "▶";
+  margin-right: 0.4em;
+  font-size: 0.7em;
+  color: var(--color-danger-fg);
+}
 
 /* Reactions row: ASCII "+" markers. */
-#__next main .gsc-social-reaction-summary-item::before {
-  content: "+ ";
+#__next main .gsc-social-reaction-summary-item:hover {
+  background: var(--color-fg-default) !important;
+  color: var(--color-canvas-default) !important;
+}
+#__next main .gsc-social-reaction-summary-item:hover svg {
+  fill: var(--color-canvas-default) !important;
 }
 
 /* Dividers between comments become dash runs. */
