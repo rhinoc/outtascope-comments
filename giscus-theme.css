@@ -703,5 +703,5 @@ markdown-toolbar,
    editor, not stop at the tabs. */
 #__next main .gsc-comment-box-tabs,
 #__next main .gsc-reply-box-tabs {
-  border-bottom: 1px solid var(--color-border-muted) !important;
+  border-bottom: 1px solid var(--color-fg-muted) !important;
 }
