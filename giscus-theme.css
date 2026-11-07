@@ -227,14 +227,14 @@ html[data-color-mode="dark"] {
 
 /* Pull the site's pixel font so section headers inside giscus
    ("0 comments", "Write") render in Bytesized like the rest. The
-   woff2 is served from this site's origin; giscus loads the CSS
-   from the same origin so the path resolves. */
+   woff2 is served via jsdelivr so it resolves regardless of which
+   origin this stylesheet is loaded from. */
 @font-face {
   font-family: "Bytesized";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("/assets/fonts/bytesized.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/gh/rhinoc/outtascope-comments@main/bytesized.woff2") format("woff2");
 }
 
 #__next main .gsc-header,
