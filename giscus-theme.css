@@ -430,3 +430,97 @@ markdown-toolbar,
 .gsc-reply-box {
   font-family: inherit;
 }
+
+/* ── TUI chrome ────────────────────────────────────────────────
+   Lean into the terminal/ascii look: monospace UI text, box
+   borders on the panels, ASCII sigils on labels and buttons. */
+
+#__next main .gsc-comments,
+#__next main .gsc-comment,
+#__next main .gsc-reply,
+#__next main .gsc-comment-box,
+#__next main .gsc-reply-box,
+#__next main .timeline-comment,
+#__next main .Box,
+#__next main .form-control,
+#__next main input[type="text"],
+#__next main textarea {
+  border: 1px solid var(--color-border-default) !important;
+  background: var(--color-canvas-default) !important;
+}
+
+/* Monospace for UI chrome — inputs, buttons, counters, links. */
+#__next main button,
+#__next main .btn,
+#__next main .tabnav-tab,
+#__next main .gsc-reactions-button,
+#__next main .gsc-social-reaction-summary-item,
+#__next main .gsc-comments-count,
+#__next main .gsc-header,
+#__next main input,
+#__next main textarea,
+#__next main markdown-toolbar,
+#__next main .Link,
+#__next main a {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace !important;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0;
+}
+
+/* Big headers get the pixel font, small chrome gets mono. */
+#__next main h1, #__next main h2 {
+  font-family: "Bytesized", ui-monospace, monospace !important;
+  letter-spacing: 0.05em;
+}
+#__next main h3, #__next main h4 {
+  font-family: "Bytesized", ui-monospace, monospace !important;
+  letter-spacing: 0.05em;
+}
+
+/* ASCII decorations: `>` before section headers, `[ ]` around tabs. */
+#__next main .gsc-comments-count::before,
+#__next main .gsc-header::before {
+  content: "> ";
+  color: var(--color-fg-muted);
+  font-family: ui-monospace, monospace;
+}
+#__next main .gsc-reactions-count::before {
+  content: "· ";
+  color: var(--color-fg-muted);
+}
+#__next main .gsc-reactions-count::after {
+  content: " ·";
+  color: var(--color-fg-muted);
+}
+
+/* Bracket the tabs. */
+#__next main .tabnav-tab::before { content: "[ "; color: var(--color-fg-muted); }
+#__next main .tabnav-tab::after { content: " ]"; color: var(--color-fg-muted); }
+#__next main .tabnav-tab[aria-selected="true"]::before,
+#__next main .tabnav-tab.selected::before { content: "[*"; color: var(--color-accent-fg); }
+#__next main .tabnav-tab[aria-selected="true"]::after,
+#__next main .tabnav-tab.selected::after { content: "*]"; color: var(--color-accent-fg); }
+
+/* Buttons: drop the GitHub pill, get a mono bracketed look. */
+#__next main .btn-primary {
+  text-transform: none;
+}
+#__next main .btn-primary::before { content: "> "; }
+#__next main .btn-primary::after { content: " <"; }
+
+/* Reactions row: ASCII "+" markers. */
+#__next main .gsc-social-reaction-summary-item::before {
+  content: "+ ";
+}
+
+/* Dividers between comments become dash runs. */
+#__next main .gsc-comment ~ .gsc-comment {
+  border-top: 1px dashed var(--color-border-default);
+}
+
+/* Focus: keep it 1-bit — invert, not glow. */
+#__next main *:focus {
+  outline: 1px dashed var(--color-fg-default) !important;
+  outline-offset: -1px !important;
+  box-shadow: none !important;
+}
