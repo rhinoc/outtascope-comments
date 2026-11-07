@@ -13,7 +13,7 @@
   color-scheme: light;
 }
 
-html[data-color-mode="light"] {
+:root {
   color-scheme: light;
   --color-prettylights-syntax-comment: #676c75;
   --color-prettylights-syntax-constant: #0550ae;
@@ -117,7 +117,8 @@ html[data-color-mode="light"] {
   --color-scale-gray-9: #24292f;
 }
 
-html[data-color-mode="dark"] {
+@media (prefers-color-scheme: dark) {
+  :root {
     color-scheme: dark;
     --color-prettylights-syntax-comment: #949aa3;
     --color-prettylights-syntax-constant: #79c0ff;
