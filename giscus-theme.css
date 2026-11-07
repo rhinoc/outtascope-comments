@@ -659,8 +659,11 @@ markdown-toolbar,
 }
 #__next main .gsc-comment-box-tabs .tabnav-tab[aria-selected="true"],
 #__next main .gsc-comment-box-tabs .tabnav-tab.selected {
-  background: var(--color-fg-default) !important;
-  color: var(--color-canvas-default) !important;
+  background: transparent !important;
+  color: var(--color-fg-default) !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid var(--color-fg-default) !important;
+  margin-bottom: -1px;
 }
 
 /* The dashed markdown-hint footer blends into the same panel. */
