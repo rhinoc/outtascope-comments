@@ -337,8 +337,6 @@
 #__next main .form-control.form-control,
 #__next main .gsc-comment-box-textarea,
 #__next main .gsc-reply-box textarea {
-  border-width: 1px !important;
-  border-style: solid !important;
   font-family:
     "Funnel Sans Variable",
     "PingFang SC",
