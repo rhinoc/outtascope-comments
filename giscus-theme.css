@@ -595,3 +595,36 @@ markdown-toolbar,
   font-family: ui-monospace, monospace !important;
   font-size: 0.8rem !important;
 }
+
+/* ── Refine the divider + hints ────────────────────────────────
+   The "Write | Preview" tab bar and the markdown hint carry
+   GitHub's default heavy bottom border + 2px divider. Replace
+   with a thin muted line matching the site's hairline rules. */
+#__next main .gsc-comment-box-tabs,
+#__next main .gsc-comment-box-main,
+#__next main .gsc-comment-box-bottom,
+#__next main .gsc-reply-box-tabs,
+#__next main .gsc-reply-box-main {
+  border-color: var(--color-border-muted) !important;
+}
+
+#__next main .gsc-comment-box-tabs,
+#__next main .gsc-reply-box-tabs {
+  border-bottom-width: 1px !important;
+}
+
+/* Markdown hint ("M↓") — drop the boxy outline, keep it a quiet
+   footnote. */
+#__next main .gsc-comment-box-bottom .Link,
+#__next main .gsc-comment-box-bottom a,
+#__next main .gsc-reply-box-bottom a {
+  color: var(--color-fg-subtle) !important;
+  border: 0 !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Focus outline goes through the same hairline. */
+#__next main *:focus-visible {
+  outline: 1px solid var(--color-accent-fg) !important;
+  outline-offset: 0 !important;
+}
