@@ -233,24 +233,11 @@
     sans-serif;
 }
 
-/* Pull the site's pixel font so section headers inside giscus
-   ("0 comments", "Write") render in Bytesized like the rest. The
-   woff2 is served via jsdelivr so it resolves regardless of which
-   origin this stylesheet is loaded from. */
-@font-face {
-  font-family: "Bytesized";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("https://cdn.jsdelivr.net/gh/rhinoc/outtascope-comments@main/bytesized.woff2") format("woff2");
-}
-
 #__next main .gsc-header,
 #__next main .gsc-comments-count,
 #__next main h1, #__next main h2, #__next main h3, #__next main h4,
 #__next main .text-bold {
   font-family:
-    "Bytesized",
     "Funnel Sans Variable",
     "PingFang SC",
     "Hiragino Sans GB",
@@ -473,11 +460,11 @@ markdown-toolbar,
 
 /* Big headers get the pixel font, small chrome gets mono. */
 #__next main h1, #__next main h2 {
-  font-family: "Bytesized", ui-monospace, monospace !important;
+  font-family: "Funnel Sans Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
   letter-spacing: 0.05em;
 }
 #__next main h3, #__next main h4 {
-  font-family: "Bytesized", ui-monospace, monospace !important;
+  font-family: "Funnel Sans Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
   letter-spacing: 0.05em;
 }
 
@@ -585,7 +572,7 @@ markdown-toolbar,
 #__next main .gsc-comments-count,
 #__next main .gsc-header,
 #__next main .gsc-reactions-count {
-  font-family: "Bytesized", ui-monospace, monospace !important;
+  font-family: "Funnel Sans Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
   letter-spacing: 0.04em;
   font-weight: 400 !important;
 }
