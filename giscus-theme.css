@@ -615,7 +615,7 @@ markdown-toolbar,
 #__next main .gsc-comment-box-bottom a,
 #__next main .gsc-reply-box-bottom a {
   color: var(--color-fg-subtle) !important;
-  border: 0 !important;
+  border: none !important;
   font-size: 0.8125rem !important;
 }
 
@@ -643,7 +643,7 @@ markdown-toolbar,
 #__next main textarea,
 #__next main input[type="text"],
 #__next main .gsc-comment-box-textarea {
-  border: 0 !important;
+  border: none !important;
   background: var(--color-canvas-subtle) !important;
   box-shadow: none !important;
 }
@@ -653,11 +653,11 @@ markdown-toolbar,
 #__next main .gsc-comment-box-tabs,
 #__next main .gsc-reply-box-tabs {
   background: var(--color-canvas-subtle) !important;
-  border: 0 !important;
+  border: none !important;
 }
 #__next main .gsc-comment-box-tabs .tabnav-tab {
   background: transparent !important;
-  border: 0 !important;
+  border: none !important;
 }
 #__next main .gsc-comment-box-tabs .tabnav-tab[aria-selected="true"],
 #__next main .gsc-comment-box-tabs .tabnav-tab.selected {
@@ -669,7 +669,7 @@ markdown-toolbar,
 #__next main .gsc-comment-box-bottom,
 #__next main .gsc-reply-box-bottom {
   background: var(--color-canvas-subtle) !important;
-  border: 0 !important;
+  border: none !important;
 }
 #__next main .gsc-comment-box-bottom a,
 #__next main .gsc-reply-box-bottom a {
