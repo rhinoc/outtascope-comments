@@ -535,3 +535,63 @@ markdown-toolbar,
   outline-offset: -1px !important;
   box-shadow: none !important;
 }
+
+/* ── Typography pass ───────────────────────────────────────────
+   The earlier mono-only pass made everything ui-monospace, which
+   left buttons/inputs feeling out of place. Bring back the site
+   fonts: Funnel Sans for body, Bytesized for headers, mono for
+   code. */
+#__next main {
+  font-family:
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif !important;
+}
+
+/* Body text, inputs, tabs, comment prose — Funnel Sans. */
+#__next main .gsc-comment-body,
+#__next main .gsc-comment-content,
+#__next main textarea,
+#__next main input[type="text"],
+#__next main .tabnav-tab,
+#__next main .Link,
+#__next main a,
+#__next main p,
+#__next main .markdown-body {
+  font-family:
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif !important;
+  font-size: 0.9375rem !important;
+}
+
+/* Buttons + actions — Bytesized pixel font. */
+#__next main .btn,
+#__next main button,
+#__next main .gsc-reactions-button,
+#__next main .gsc-social-reaction-summary-item,
+#__next main .gsc-comments-count,
+#__next main .gsc-header,
+#__next main .gsc-reactions-count {
+  font-family: "Bytesized", ui-monospace, monospace !important;
+  letter-spacing: 0.04em;
+  font-weight: 400 !important;
+}
+
+/* Inputs and textareas stay Funnel Sans (mono for code only). */
+#__next main textarea::placeholder,
+#__next main input::placeholder {
+  font-family: "Funnel Sans Variable", sans-serif !important;
+  color: var(--color-fg-muted) !important;
+}
+
+/* Markdown toolbar stays mono — it's about inserting syntax. */
+#__next main markdown-toolbar button,
+#__next main .gsc-markdown-tab {
+  font-family: ui-monospace, monospace !important;
+  font-size: 0.8rem !important;
+}
