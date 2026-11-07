@@ -686,10 +686,14 @@ markdown-toolbar,
   border: none !important;
 }
 
-/* Outer comment box cards: drop the frame, use fill only. */
+/* Outer comment box card keeps a 1px frame — it's the visual
+   boundary of the whole editor panel. Inner pieces stay borderless. */
 #__next main .gsc-comment-box,
-#__next main .gsc-reply-box,
+#__next main .gsc-reply-box {
+  border: 1px solid var(--color-border-muted) !important;
+  background: var(--color-canvas-subtle) !important;
+}
 #__next main .gsc-comment-box .color-border-primary,
 #__next main .gsc-comment-box [class*="border"] {
-  border: none !important;
+  border-color: var(--color-border-muted) !important;
 }
