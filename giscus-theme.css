@@ -1,0 +1,432 @@
+/*!
+ * Giscus theme for outtascope.com
+ * Mirrors src/styles.css design tokens so the comment iframe blends in.
+ * giscus loads this URL inside its iframe and also switches on
+ * `prefers-color-scheme` itself, so both branches live here.
+ */
+
+/* giscus puts this file inside its iframe; it scopes by
+   `[data-color-mode=light|dark]` on <html> so we don't rely on
+   prefers-color-scheme alone. */
+
+html[data-color-mode="light"] {
+  color-scheme: light;
+  --color-prettylights-syntax-comment: #676c75;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #1c1e22;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #a3141b;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #1c1e22;
+  --color-prettylights-syntax-markup-bold: #1c1e22;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-brackethighlighter-angle: #57606a;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-fg-default: #1c1e22;
+  --color-fg-muted: #676c75;
+  --color-fg-subtle: #676c75;
+  --color-canvas-default: #eceef1;
+  --color-canvas-subtle: #e6e9ed;
+  --color-border-default: #d3d6db;
+  --color-border-muted: #d3d6db;
+  --color-neutral-muted: #e2e5e9;
+  --color-accent-fg: #545a64;
+  --color-accent-emphasis: #1c1e22;
+  --color-accent-muted: #d3d6db;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #a3141b;
+  --color-btn-text: #545a64;
+  --color-btn-bg: transparent;
+  --color-btn-border: #d3d6db;
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: #9aa0a9;
+  --color-btn-active-bg: #e2e5e9;
+  --color-btn-active-border: #b8bdc5;
+  --color-btn-selected-bg: #e2e5e9;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #1f6feb;
+  --color-btn-primary-border: rgba(28, 30, 34, 0.15);
+  --color-btn-primary-hover-bg: #1a5fd0;
+  --color-btn-primary-hover-border: rgba(28, 30, 34, 0.15);
+  --color-btn-primary-selected-bg: #1a5fd0;
+  --color-btn-primary-disabled-bg: #b3c8e8;
+  --color-btn-primary-disabled-border: rgba(28, 30, 34, 0.1);
+  --color-btn-primary-disabled-text: #ffffff;
+  --color-social-reaction-bg: transparent;
+  --color-social-reaction-bg-hover: #f3f4f6;
+  --color-social-reaction-bg-reacted-hover: #ddf0ff;
+  --color-social-reaction-border: transparent;
+  --color-social-reaction-border-reacted-hover: #b6d6ff;
+  --color-input-text: #1c1e22;
+  --color-input-bg: #fafbfc;
+  --color-input-contrast-bg: #f3f4f6;
+  --color-input-border: #d3d6db;
+  --color-input-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.04);
+  --color-state-hover-primary-bg: #1c1e22;
+  --color-state-hover-primary-border: #1c1e22;
+  --color-state-hover-primary-text: #eceef1;
+  --color-state-hover-primary-icon: #eceef1;
+  --color-state-hover-secondary-bg: #e2e5e9;
+  --color-state-hover-secondary-border: #d3d6db;
+  --color-state-selected-primary-bg: #1c1e22;
+  --color-state-selected-primary-border: #1c1e22;
+  --color-state-selected-primary-text: #eceef1;
+  --color-state-selected-primary-icon: #eceef1;
+  --color-state-focus-border: #545a64;
+  --color-state-focus-shadow: 0 0 0 3px rgba(84, 90, 100, 0.3);
+  --color-primer-canvas-backdrop: rgba(28, 30, 34, 0.4);
+  --color-primer-canvas-sticky: rgba(236, 238, 241, 0.95);
+  --color-primer-border-active: #a3141b;
+  --color-primer-border-contrast: rgba(28, 30, 34, 0.1);
+  --color-primer-shadow-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-primer-shadow-inset: inset 0 1px 0 rgba(0, 0, 0, 0.08);
+  --color-primer-shadow-focus: 0 0 0 3px rgba(84, 90, 100, 0.3);
+  --color-scale-gray-0: #f6f8fa;
+  --color-scale-gray-1: #eaeef2;
+  --color-scale-gray-2: #d0d7de;
+  --color-scale-gray-3: #afb8c1;
+  --color-scale-gray-4: #8c959f;
+  --color-scale-gray-5: #6e7781;
+  --color-scale-gray-6: #57606a;
+  --color-scale-gray-7: #424a53;
+  --color-scale-gray-8: #32383f;
+  --color-scale-gray-9: #24292f;
+}
+
+html[data-color-mode="dark"] {
+    color-scheme: dark;
+    --color-prettylights-syntax-comment: #949aa3;
+    --color-prettylights-syntax-constant: #79c0ff;
+    --color-prettylights-syntax-entity: #d2a8ff;
+    --color-prettylights-syntax-storage-modifier-import: #e3e5e9;
+    --color-prettylights-syntax-entity-tag: #7ee787;
+    --color-prettylights-syntax-keyword: #ff7b72;
+    --color-prettylights-syntax-string: #a5d6ff;
+    --color-prettylights-syntax-variable: #ffa657;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+    --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+    --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+    --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+    --color-prettylights-syntax-carriage-return-bg: #b62324;
+    --color-prettylights-syntax-string-regexp: #7ee787;
+    --color-prettylights-syntax-markup-list: #f2cc60;
+    --color-prettylights-syntax-markup-heading: #1f6feb;
+    --color-prettylights-syntax-markup-italic: #e3e5e9;
+    --color-prettylights-syntax-markup-bold: #e3e5e9;
+    --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+    --color-prettylights-syntax-markup-deleted-bg: #67060c;
+    --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+    --color-prettylights-syntax-markup-inserted-bg: #033a16;
+    --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+    --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+    --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+    --color-prettylights-syntax-brackethighlighter-angle: #8c959f;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+    --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+    --color-fg-default: #e3e5e9;
+    --color-fg-muted: #949aa3;
+    --color-fg-subtle: #949aa3;
+    --color-canvas-default: #17181b;
+    --color-canvas-subtle: #1e2126;
+    --color-border-default: #2f3237;
+    --color-border-muted: #2f3237;
+    --color-neutral-muted: #222428;
+    --color-accent-fg: #c6cad1;
+    --color-accent-emphasis: #d5d9df;
+    --color-accent-muted: #2f3237;
+    --color-attention-subtle: rgba(187, 128, 9, 0.15);
+    --color-danger-fg: #f85149;
+    --color-btn-text: #c6cad1;
+    --color-btn-bg: transparent;
+    --color-btn-border: #2f3237;
+    --color-btn-hover-bg: #2c3036;
+    --color-btn-hover-border: #4a5058;
+    --color-btn-active-bg: #35393f;
+    --color-btn-active-border: #4a5058;
+    --color-btn-selected-bg: #222428;
+    --color-btn-primary-text: #ffffff;
+    --color-btn-primary-bg: #388bfd;
+    --color-btn-primary-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-hover-bg: #1f6feb;
+    --color-btn-primary-hover-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-selected-bg: #1f6feb;
+    --color-btn-primary-disabled-bg: #2f3237;
+    --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-disabled-text: #676c75;
+    --color-social-reaction-bg: transparent;
+    --color-social-reaction-bg-hover: #2c3036;
+    --color-social-reaction-bg-reacted-hover: #1f3a5f;
+    --color-social-reaction-border: transparent;
+    --color-social-reaction-border-reacted-hover: #388bfd;
+    --color-input-text: #e3e5e9;
+    --color-input-bg: #0f1013;
+    --color-input-contrast-bg: #222428;
+    --color-input-border: #3a3f47;
+    --color-input-shadow: 0 0 transparent;
+    --color-state-hover-primary-bg: #4a4f57;
+    --color-state-hover-primary-border: #4a4f57;
+    --color-state-hover-primary-text: #eceef1;
+    --color-state-hover-primary-icon: #eceef1;
+    --color-state-hover-secondary-bg: #2c2f35;
+    --color-state-hover-secondary-border: #3d434b;
+    --color-state-selected-primary-bg: #4a4f57;
+    --color-state-selected-primary-border: #4a4f57;
+    --color-state-selected-primary-text: #eceef1;
+    --color-state-selected-primary-icon: #eceef1;
+    --color-state-focus-border: #c6cad1;
+    --color-state-focus-shadow: 0 0 0 3px rgba(198, 202, 209, 0.3);
+    --color-primer-canvas-backdrop: rgba(0, 0, 0, 0.6);
+    --color-primer-canvas-sticky: rgba(23, 24, 27, 0.95);
+    --color-primer-border-active: #b3161e;
+    --color-primer-border-contrast: rgba(227, 229, 233, 0.1);
+    --color-primer-shadow-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --color-primer-shadow-inset: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+    --color-primer-shadow-focus: 0 0 0 3px rgba(198, 202, 209, 0.3);
+    --color-scale-gray-0: #f0f6fc;
+    --color-scale-gray-1: #c9d1d9;
+    --color-scale-gray-2: #b1bac4;
+    --color-scale-gray-3: #8b949e;
+    --color-scale-gray-4: #6e7681;
+    --color-scale-gray-5: #484f58;
+    --color-scale-gray-6: #30363d;
+    --color-scale-gray-7: #21262d;
+    --color-scale-gray-8: #161b22;
+    --color-scale-gray-9: #0d1117;
+}
+
+#__next main {
+  background: transparent;
+  font-family:
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+/* Pull the site's pixel font so section headers inside giscus
+   ("0 comments", "Write") render in Bytesized like the rest. The
+   woff2 is served from this site's origin; giscus loads the CSS
+   from the same origin so the path resolves. */
+@font-face {
+  font-family: "Bytesized";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fonts/bytesized.woff2") format("woff2");
+}
+
+#__next main .gsc-header,
+#__next main .gsc-comments-count,
+#__next main h1, #__next main h2, #__next main h3, #__next main h4,
+#__next main .text-bold {
+  font-family:
+    "Bytesized",
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em;
+}
+
+/* ── Pixel / 1-bit chrome ──────────────────────────────────────
+   giscus mounts under <main>; prefixing selectors with `main`
+   beats Tailwind `!important` utilities (e.g. `rounded-md`) on
+   specificity when both sides use !important. */
+
+#__next main *,
+#__next main *::before,
+#__next main *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Tailwind utility classes giscus applies directly to elements
+   (rounded-md, rounded-full, shadow-sm, etc.) sit after our
+   theme in document order, so a plain `#__next main *` rule loses
+   ties. Target them explicitly with the same !important and a
+   higher-specificity selector. */
+#__next main .rounded,
+#__next main .rounded-sm,
+#__next main .rounded-md,
+#__next main .rounded-lg,
+#__next main .rounded-xl,
+#__next main .rounded-2xl,
+#__next main .rounded-3xl,
+#__next main .rounded-full,
+#__next main .rounded-t-md,
+#__next main .rounded-b-md,
+#__next main .rounded-t,
+#__next main .rounded-b,
+#__next main .rounded-l,
+#__next main .rounded-r {
+  border-radius: 0 !important;
+}
+
+#__next main .shadow,
+#__next main .shadow-sm,
+#__next main .shadow-md,
+#__next main .shadow-lg,
+#__next main .shadow-xl,
+#__next main .shadow-2xl,
+#__next main .shadow-inner {
+  box-shadow: none !important;
+}
+
+/* giscus's own class names carry their own radii
+   (`.gsc-social-reaction-summary-item`, `.form-control`, `.btn`,
+   `.Box`, etc.). Hit any element whose class mentions them. */
+#__next main [class*="gsc-"],
+#__next main .btn,
+#__next main .form-control,
+#__next main .Box,
+#__next main .avatar,
+#__next main .timeline-comment,
+#__next main .tabnav-tab,
+#__next main .Label,
+#__next main .Counter {
+  border-radius: 0 !important;
+}
+
+#__next main button.btn,
+#__next main a.btn,
+#__next main .btn.btn,
+#__next main button.Button,
+#__next main [role="button"].btn,
+#__next main .tabnav-tab,
+#__next main .gsc-reactions-button,
+#__next main .gsc-social-reaction-summary-item,
+#__next main .gsc-reaction-button {
+  border-width: 1px !important;
+  border-style: solid !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  transition: none !important;
+}
+
+/* Thin stepped "pressed" feel: when a button is active, offset
+   a hard 1px shadow instead of a soft gradient. */
+#__next main .btn:active,
+#__next main [role="button"]:active,
+#__next main .gsc-reaction-button:active,
+#__next main .gsc-reactions-button:active {
+  box-shadow: inset 1px 1px 0 var(--color-fg-default) !important;
+  translate: 1px 1px;
+}
+
+#__next main textarea,
+#__next main input[type="text"],
+#__next main input[type="search"],
+#__next main .form-control.form-control,
+#__next main .gsc-comment-box-textarea,
+#__next main .gsc-reply-box textarea {
+  border-width: 1px !important;
+  border-style: solid !important;
+  font-family:
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif !important;
+}
+
+#__next main textarea:focus,
+#__next main input:focus,
+#__next main .form-control:focus,
+#__next main .gsc-comment-box-textarea:focus {
+  outline: 2px solid var(--color-accent-fg) !important;
+  outline-offset: -1px !important;
+  box-shadow: none !important;
+}
+
+/* Comment and reply cards: drop the soft bubble look. */
+#__next main .gsc-comment.gsc-comment,
+#__next main .gsc-reply,
+#__next main .gsc-comment-box,
+#__next main .gsc-reply-box,
+#__next main .timeline-comment,
+#__next main .Box.Box,
+#__next main .color-bg-default.color-bg-default,
+#__next main .color-bg-subtle.color-bg-subtle {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
+/* Reactions row: keep pills square and chunky. */
+#__next main .gsc-reactions {
+  gap: 4px;
+}
+
+#__next main .gsc-reactions-button {
+  padding: 4px 8px !important;
+}
+
+/* Selection / dropdown chrome. */
+#__next main .SelectMenu-modal,
+#__next main .dropdown-menu,
+#__next main .Popover-message {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
+/* Scrollbar: square thumb. */
+#__next main *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+#__next main *::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border: 2px solid var(--color-canvas-default);
+}
+#__next main *::-webkit-scrollbar-track {
+  background: var(--color-canvas-default);
+}
+
+/* "Markdown supported" / toolbar icons stay outlined. */
+#__next main markdown-toolbar button,
+#__next main .gsc-markdown-tab {
+  border-radius: 0 !important;
+}
+
+#__next main {
+  --giscors-font-family:
+    "Funnel Sans Variable",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+.gsc-comment-box-textarea,
+.gsc-reply-box textarea,
+textarea {
+  font-family: inherit;
+}
+
+markdown-toolbar,
+.gsc-comment-box,
+.gsc-reply-box {
+  font-family: inherit;
+}
