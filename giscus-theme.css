@@ -478,8 +478,7 @@ markdown-toolbar,
 }
 
 /* ASCII decorations: `>` before section headers, `[ ]` around tabs. */
-#__next main .gsc-comments-count::before,
-#__next main .gsc-header::before {
+#__next main .gsc-comments-count::before {
   content: "> ";
   color: var(--color-fg-muted);
   font-family: ui-monospace, monospace;
@@ -505,8 +504,7 @@ markdown-toolbar,
 #__next main .btn-primary {
   text-transform: none;
 }
-#__next main .btn-primary::before { content: "> "; }
-#__next main .btn-primary::after { content: " <"; }
+#__next main .btn-primary::before { content: "> "; margin-right: 0.25em; }
 
 /* Reactions row: ASCII "+" markers. */
 #__next main .gsc-social-reaction-summary-item::before {
