@@ -508,13 +508,13 @@ markdown-toolbar,
   text-transform: none;
 }
 #__next main .btn-primary {
-  background: var(--color-fg-default) !important;
-  color: var(--color-canvas-default) !important;
-  border-color: var(--color-fg-default) !important;
+  background: var(--color-btn-primary-bg) !important;
+  color: var(--color-btn-primary-text) !important;
+  border-color: var(--color-btn-primary-border) !important;
 }
 #__next main .btn-primary:hover {
-  background: var(--color-fg-muted) !important;
-  border-color: var(--color-fg-muted) !important;
+  background: var(--color-btn-primary-hover-bg) !important;
+  border-color: var(--color-btn-primary-hover-border) !important;
 }
 #__next main .btn-primary::before {
   content: "▶";
