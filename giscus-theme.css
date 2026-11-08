@@ -653,17 +653,21 @@ markdown-toolbar,
   background: var(--color-canvas-subtle) !important;
   border: none !important;
 }
-#__next main .gsc-comment-box-tabs .tabnav-tab {
+/* Selected tab uses color-bg-canvas (white) — restyle it to match
+   the editor fill so it reads as one panel, not a floating card. */
+#__next main .gsc-comment-box-tabs button,
+#__next main .gsc-reply-box-tabs button {
   background: transparent !important;
   border: none !important;
+  color: var(--color-fg-muted) !important;
 }
-#__next main .gsc-comment-box-tabs .tabnav-tab[aria-selected="true"],
-#__next main .gsc-comment-box-tabs .tabnav-tab.selected {
+#__next main .gsc-comment-box-tabs button.color-bg-canvas,
+#__next main .gsc-reply-box-tabs button.color-bg-canvas {
   background: var(--color-canvas-subtle) !important;
   color: var(--color-fg-default) !important;
   font-weight: 600 !important;
   border-bottom: 2px solid var(--color-fg-default) !important;
-  margin-bottom: -1px;
+  margin-bottom: -1px !important;
 }
 
 /* The dashed markdown-hint footer blends into the same panel. */
@@ -680,12 +684,17 @@ markdown-toolbar,
 /* ── Strip Tailwind border utilities on editor chrome ─────────
    The tab bar + markdown hint row use `border`/`border-t`/
    `border-b-0` utilities; we want them flat against the fill. */
-#__next main .gsc-comment-box-tabs [class*="border"],
-#__next main .gsc-reply-box-tabs [class*="border"],
+#__next main .gsc-comment-box-tabs [class*="border"]:not(button),
+#__next main .gsc-reply-box-tabs [class*="border"]:not(button),
 #__next main .gsc-comment-box-bottom [class*="border"],
-#__next main .gsc-reply-box-bottom [class*="border"],
-#__next main .gsc-comment-box-tabs .tabnav-tab,
-#__next main .gsc-reply-box-tabs .tabnav-tab {
+#__next main .gsc-reply-box-bottom [class*="border"] {
+  border: none !important;
+}
+
+/* Tab buttons carry Tailwind `border`/`border-b-0` classes —
+   strip those, then let the selected rule re-add its 2px mark. */
+#__next main .gsc-comment-box-tabs button,
+#__next main .gsc-reply-box-tabs button {
   border: none !important;
 }
 
